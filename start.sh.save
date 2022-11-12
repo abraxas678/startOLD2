@@ -18,5 +18,5 @@ read -p "is this a WSL?: >> " MY_WSL
 sudo apt update
 curl -L check-user.yyps.de | bash
 if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
-  [[ $MY_WSL = "y" ]] &&  $HOME/bin/change-hostname-wsl.sh            
+  $HOME/bin/change-hostname.sh
 fi
