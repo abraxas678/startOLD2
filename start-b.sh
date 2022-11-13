@@ -12,15 +12,16 @@ echo "
 - apt install
 - dotfiles
 "
+sleep 1
 ### USER -INPUT
 mkdir $HOME/tmp
 cd $HOME/tmp
 wget https://raw.githubusercontent.com/abraxas678/start/main/get_input.sh
 chmod +x *.sh
-bash $HOME/tmp/get_input.sh "hostname: >>> "
+source $HOME/tmp/get_input.sh "hostname: >>> "
 echo; echo $output
 MY_HOSTNAME=$output
-bash $HOME/tmp/get_input.sh "WSL? (y/n) >>> "
+source $HOME/tmp/get_input.sh "WSL? (y/n) >>> "
 echo; echo $output
 MY_WSL=$output
 sleep 5
