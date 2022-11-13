@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo "v0.4"
+echo "v0.5"
 echo "
 - apt update
 - check user
@@ -17,10 +17,10 @@ mkdir $HOME/tmp
 cd $HOME/tmp
 wget https://raw.githubusercontent.com/abraxas678/start/main/get_input.sh
 chmod +x *.sh
-source $HOME/tmp/get_input.sh "hostname: >>> "
+bash $HOME/tmp/get_input.sh "hostname: >>> "
 echo; echo $output
 MY_HOSTNAME=$output
-source $HOME/tmp/get_input.sh "WSL? (y/n) >>> "
+bash $HOME/tmp/get_input.sh "WSL? (y/n) >>> "
 echo; echo $output
 MY_WSL=$output
 sleep 5
