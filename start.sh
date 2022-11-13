@@ -19,6 +19,7 @@ wget https://raw.githubusercontent.com/abraxas678/start/main/get_input.sh
 chmod +x *.sh
 source $HOME/tmp/get_input.sh "hostname: >>> "
 echo; echo $output
+MY_HOSTNAME=$output
 sleep 5
 read -p "hostname: >> " MY_HOSTNAME
 read -p "is this a WSL?: >> " MY_WSL
