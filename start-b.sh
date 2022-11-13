@@ -15,7 +15,7 @@ echo "
 sleep 1
 ### USER -INPUT
 [[ ! -d $HOME/tmp ]] && mkdir $HOME/tmp
-#read -p "hostname: >> " MY_HOSTNAME
+read -p "hostname: >> " MY_HOSTNAME
 #sleep 2
 sudo apt update
 [[ $(git --version) != *"git version"* ]] && sudo apt install -y git curl -y
