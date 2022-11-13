@@ -7,6 +7,7 @@ if [[ $MY_WSL = "y" ]]; then
 # https://www.srccodes.com/change-hostname-ubuntu-microsoft-windows-subsystem-for-linux-wsl-wsl2-wsl-conf-unable-resolve-hosts-name-service-not-known-list-running-shutdown-vm-srccodes/
 echo "ORIGINAL HOSTNAME: $(hostname)"
 echo "$(hostname)" >$HOME/ORIGINAL_HOSTNAME
+sudo touch /etc/wsl.conf
 sudo echo "[network]" >>/etc/wsl.conf
 sudo echo "hostname = $MY_HOSTNAME" >>/etc/wsl.conf
 sudo echo "generateHosts = false" >>/etc/wsl.conf
