@@ -13,11 +13,13 @@ echo "
 - dotfiles
 "
 ### USER -INPUT
+mkdir $HOME/tmp
+cd $HOME/tmp
 wget https://raw.githubusercontent.com/abraxas678/start/main/get_input.sh
 chmod +x *.sh
 source get_input.sh
 echo; echo $output
-sleep 10
+sleep 5
 read -p "hostname: >> " MY_HOSTNAME
 read -p "is this a WSL?: >> " MY_WSL
 
@@ -31,7 +33,6 @@ if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
 fi
 sudo apt update && sudo apt upgrade -y
 
-mkdir $HOME/tmp
 mkdir $HOME/tmp/unison
 cd $HOME/tmp/unison
 wet https://github.com/bcpierce00/unison/releases/download/v2.52.1/unison-v2.52.1+ocaml-4.04.2+x86_64.linux.tar.gz
