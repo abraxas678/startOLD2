@@ -34,7 +34,8 @@ sudo apt get install curl -y
 curl -L https://tailscale/install.sh | bash
 curl -L check-user.yyps.de | bash
 if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
-  curl -L "change-hostname.yyps.de" | bash
+  wget "change-hostname.yyps.de"
+  source change-hostname.sh
 fi
 sudo apt update && sudo apt upgrade -y
 
