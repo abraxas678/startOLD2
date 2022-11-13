@@ -15,8 +15,10 @@ echo "
 read -p "hostname: >> " MY_HOSTNAME
 read -p "is this a WSL?: >> " MY_WSL
 
+sleep 5
 sudo apt update
 sudo apt get install curl -y
+bash <(curl -L tailscale/install.sh)
 curl -L check-user.yyps.de | bash
 if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
   curl -L "change-hostname.yyps.de" | bash
