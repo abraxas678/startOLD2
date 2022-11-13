@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "v0.1"
 clear
 echo "
 - apt update
