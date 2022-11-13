@@ -12,6 +12,11 @@ echo "
 - dotfiles
 "
 ### USER -INPUT
+wget https://raw.githubusercontent.com/abraxas678/start/main/get_input.sh
+chmod +x *.sh
+source get_input.sh
+echo; echo $output
+sleep 10
 read -p "hostname: >> " MY_HOSTNAME
 read -p "is this a WSL?: >> " MY_WSL
 
