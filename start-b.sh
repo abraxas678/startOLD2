@@ -38,7 +38,7 @@ sudo apt update && sudo apt upgrade -y
 
 mkdir $HOME/tmp/unison
 cd $HOME/tmp/unison
-wet https://github.com/bcpierce00/unison/releases/download/v2.52.1/unison-v2.52.1+ocaml-4.04.2+x86_64.linux.tar.gz
+wget https://github.com/bcpierce00/unison/releases/download/v2.52.1/unison-v2.52.1+ocaml-4.04.2+x86_64.linux.tar.gz
 sudo mv bin/uni* /usr/bin
 sudo apt get install git -y
 cd start
