@@ -24,8 +24,12 @@ rm -rf $HOME/tmp/start
 git clone https://github.com/abraxas678/start.git
 
 curl -fsSL https://tailscale.com/install.sh | sh
-
-$HOME/tmp/start/check-user.sh
+sudo tailscale up --ssl
+echo
+tailscale ip
+tailscale status
+echo
+$HOME/tmp/start/check_user.sh
 
 if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
   $HOME/tmp/start/change-hostname.sh
