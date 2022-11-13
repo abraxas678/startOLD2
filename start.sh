@@ -17,7 +17,7 @@ mkdir $HOME/tmp
 cd $HOME/tmp
 wget https://raw.githubusercontent.com/abraxas678/start/main/get_input.sh
 chmod +x *.sh
-source get_input.sh
+source $HOME/tmp/get_input.sh
 echo; echo $output
 sleep 5
 read -p "hostname: >> " MY_HOSTNAME
