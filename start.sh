@@ -20,6 +20,9 @@ chmod +x *.sh
 source $HOME/tmp/get_input.sh "hostname: >>> "
 echo; echo $output
 MY_HOSTNAME=$output
+source $HOME/tmp/get_input.sh "WSL? (y/n) >>> "
+echo; echo $output
+MY_WSL=$output
 sleep 5
 read -p "hostname: >> " MY_HOSTNAME
 read -p "is this a WSL?: >> " MY_WSL
