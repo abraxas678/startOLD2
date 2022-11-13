@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "v0.1"
 clear
+echo "v0.1"
 echo "
 - apt update
 - check user
