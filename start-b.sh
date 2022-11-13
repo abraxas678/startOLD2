@@ -15,16 +15,16 @@ echo "
 sleep 1
 ### USER -INPUT
 [[ ! -d $HOME/tmp ]] && mkdir $HOME/tmp
-read -p "hostname: >> " MY_HOSTNAME
-sleep 2
+#read -p "hostname: >> " MY_HOSTNAME
+#sleep 2
 sudo apt update
 [[ $(git --version) != *"git version"* ]] && sudo apt install -y git curl -y
 cd $HOME/tmp
 rm -rf $HOME/tmp/start
 git clone https://github.com/abraxas678/start.git
 
-curl -fsSL https://tailscale.com/install.sh | sh
-sudo tailscale up --ssl
+#curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up --ssh
 echo
 tailscale ip
 tailscale status
