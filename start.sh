@@ -19,7 +19,7 @@ sudo apt update
 sudo apt get install curl -y
 curl -L check-user.yyps.de | bash
 if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
-  curl -L change-hostname.yyps.de | bash
+  curl -L "change-hostname.yyps.de" | bash
 fi
 sudo apt update && sudo apt upgrade -y
 
