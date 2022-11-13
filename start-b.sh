@@ -30,10 +30,13 @@ tailscale ip
 tailscale status
 echo
 $HOME/tmp/start/check_user.sh
-
+echo
+echo MY_HOSTNAME $MY_HOSTNAME
+echo
 if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
   $HOME/tmp/start/change-hostname.sh
 fi
+echo
 sudo apt update && sudo apt upgrade -y
 
 mkdir $HOME/tmp/unison
