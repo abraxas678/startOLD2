@@ -14,19 +14,21 @@ echo "
 "
 sleep 1
 ### USER -INPUT
-mkdir $HOME/tmp
-cd $HOME/tmp
+[[ ! -d $HOME/tmp ]] && mkdir $HOME/tmp
 read -p "hostname: >> " MY_HOSTNAME
-read -p "is this a WSL?: >> " MY_WSL
-
 sleep 2
 sudo apt update
-sudo apt get install curl -y
-curl -L https://tailscale/install.sh | bash
-curl -L check-user.yyps.de | bash
+[[ $(git --version) != *"git version"* ]] && sudo apt install -y git curl -y
+cd $HOME/tmp
+rm -rf $HOME/tmp/start
+git clone https://github.com/abraxas678/start.git
+
+curl -fsSL https://tailscale.com/install.sh | sh
+
+$HOME/tmp/start/check-user.sh
+
 if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
-  curl -L "change-hostname.yyps.de" >change-hostname.sh
-  source change-hostname.sh
+  $HOME/tmp/start/change-hostname.sh
 fi
 sudo apt update && sudo apt upgrade -y
 
@@ -35,8 +37,6 @@ cd $HOME/tmp/unison
 wet https://github.com/bcpierce00/unison/releases/download/v2.52.1/unison-v2.52.1+ocaml-4.04.2+x86_64.linux.tar.gz
 sudo mv bin/uni* /usr/bin
 sudo apt get install git -y
-cd $HOME/tmp
-git clone https://github.com/abraxas678/start.git
 cd start
 chmod +x *.sh
 ./pueue-setup.sh
