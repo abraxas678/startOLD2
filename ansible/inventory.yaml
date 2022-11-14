@@ -1,0 +1,10 @@
+###1
+  all:
+    hosts:
+      ionos2:
+        ansible_hosts: ionos2
+      snasvm:
+        ansible_hosts: snasvm
+      lubuntu:
+        ansible_hosts: lubuntu
+

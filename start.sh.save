@@ -1,0 +1,22 @@
+#!/bin/bash
+clear
+echo "
+- apt update
+- check user
+- check hostname
+- apt update & upgrade
+- unison
+- pueue
+- brew setup
+- apt install
+- dotfiles
+"
+### USER -INPUT
+read -p "hostname: >> " MY_HOSTNAME
+read -p "is this a WSL?: >> " MY_WSL
+
+sudo apt update
+curl -L check-user.yyps.de | bash
+if [[ $(hostname) != *"$MY_HOSTNAME"* ]]; then
+  $HOME/bin/change-hostname.sh
+fi
